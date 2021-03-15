@@ -15,6 +15,7 @@ ctx.lineWidth = 2;
 
 var makeBgWhite = function () {
     ctx.fillStyle = '#ffffff';
+    ctx.globalCompositeOperation = 'destination-over';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 };
 
@@ -83,8 +84,8 @@ Rubber.addEventListener('click', (e) => {
 });
 YellowPen.addEventListener('click', (e) => {
     ctx.lineWidth = 20;
-    ctx.globalCompositeOperation = 'destination-over';
-    ctx.strokeStyle = 'rgba(255,255,0,0.5)';
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.strokeStyle = 'rgba(255,255,0,0.1)';
 });
 Clear.addEventListener('click', (e) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
